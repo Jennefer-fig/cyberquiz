@@ -21,6 +21,12 @@
     #acesso{
       margin: 17px;
     }
+    #ref{
+      margin-top: 17px;
+    }
+    .fontes{
+      text-align: justify;
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-gray-100 font-[Inter] min-h-screen">
@@ -215,11 +221,12 @@
       </div>
 
       <!-- Segundo texto sobre Proteção de Redes Sociais -->
-      <h2 class="text-2xl font-bold text-blue-400 mb-4 mt-12">Guia Completo: Como Proteger Suas Redes Sociais e Dados Online</h2>
-      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">Introdução: A Importância da Segurança Digital</h3>
-      <p class="mb-6">Em um mundo onde 4,9 bilhões de pessoas usam redes sociais (DataReportal, 2024) e 60% dos usuários já sofreram tentativas de golpe online (Relatório Norton Cyber Safety), proteger suas contas e dados deixou de ser opcional. Este guia detalhado vai desde configurações básicas de segurança até técnicas avançadas para evitar invasões, vazamentos e fraudes.</p>
+      <h2 class="text-2xl font-bold text-blue-400 mb-4 mt-12">Dicas extras: Como Proteger Suas Redes Sociais e Dados Online</h2>
 
       <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">1. Proteção Avançada para Redes Sociais</h3>
+      <p class="mb-2">As redes sociais são alvos constantes de hackers e golpistas. Para evitar que suas
+      contas sejam invadidas ou usadas de forma maliciosa, é essencial adotar medidas
+      robustas de segurança.</p>
       <h4 class="font-bold text-lg mb-2">Senhas Fortes e Únicas: A Primeira Linha de Defesa</h4>
       <p class="mb-2">Por que importa? 81% das invasões ocorrem por senhas fracas ou vazadas (Relatório Verizon 2023).</p>
       <p class="mb-2">Como criar senhas seguras:</p>
@@ -439,6 +446,35 @@
       </ul>
       
     </div>
+    <!-- Seção 8: Referências -->
+     <section id="ref" class="text-center hidden bg-gray-800 rounded-xl p-6 shadow-md">
+      <h2 class="text-2xl font-bold mb-4 text-blue-400">Referências e Fontes</h2>
+      <div class="fontes">
+        <div>
+          <h3 class="font-bold text-lg mb-2"><i class="fas fa-book text-yellow-400 mr-2"></i>Livros e artigos</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li><em>Segurança em informática e de informações</em> - Carlos A. A. Carudo e Flávio Deny Steffen</li>
+            <li><em>Segurança e auditoria da tecnologia da informação</em> - Claudia Dias</li>
+            <li><a href="https://www.cert.br/docs/palestras/certbr-egi2014.pdf" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">CERT.br - Fundamentos de Segurança da Informação </a></li>
+            <li><a href="https://support.norton.com/sp/en/us/home/current/solutions/v105274822" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Norton – Dicas contra golpes online. </a></li>
+            <li><a href="https://safety.google/intl/pt-BR_br/stories/passwort/" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Google Safety Center – Por que a autenticação em dois fatores é essencial </a></li>
+            <li><a href="https://www.kaspersky.com.br/blog/unknown-apps-android/18082/" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Kaspersky Lab – Riscos de conceder acesso a apps desconhecidos</a></li>
+            <li><a href="https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Federal Trade Commission (FTC) – Como reconhecer e evitar fraudes </a></li>
+            <li><a href="https://bitwarden.com/blog/an-introductory-guide-on-how-to-use-bitwarden-password-manager/" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Bitwarden Blog - Por que usar um gerenciador de senhas </a></li>
+            <li><a href="https://www.lastpass.com/pt/features/password-generator/tips-for-creating-strong-passwords" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">LastPass Security - Como criar senhas fortes </a></li>
+          </ul>
+
+          <div>
+              <h3 class="font-bold text-lg mb-2"><i class="fas fa-globe text-blue-400 mr-2"></i>Vídeos:</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li><a href="https://youtu.be/Gfh2bxe3hGU" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Vídeo aula sobre segurança da informação - Professora Nattane</a></li>
+            <li><a href="https://youtu.be/Tnp5c8VpOrI?si=aMk8sOrqahDL94FB" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Princípios da segurança da informação -Rico domingues concursos</a></li>
+            <li><a href="https://youtu.be/aIFsUBXe-mk?si=Cl045aFPYBL4lEMj" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Principais tipos de ataques cibernéticos</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <div id="acesso" class="text-center mb-12 hidden bg-gray-800 rounded-xl p-6 shadow-md">
         <p id="text-ancora">Diante desse panorama geral  que apresentamos sobre a cibersegurança, se sente preparado(a) para responder o quiz? Acha que consegue acertar todas as perguntas? Faça o teste e comprove seus conhecimentos. </p>
         <button class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-bold transition btn-hover ">
@@ -455,7 +491,8 @@
     function mostrarTexto() {
       const texto = document.getElementById("texto-completo");
       const btn = document.getElementById("saiba-mais-btn");
-      document.getElementById("acesso").classList.remove("hidden")
+      document.getElementById("acesso").classList.remove("hidden");
+      document.getElementById("ref").classList.remove("hidden");
       document.getElementById("ancora").classList.remove("hidden");
       
       texto.classList.toggle("hidden");

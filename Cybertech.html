@@ -24,6 +24,12 @@
         transform: none;
       }
     }
+    .fontes{
+      text-align: justify;
+    }
+    .container-fonte{
+      padding-left: 17%;
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-gray-100 font-[Inter]">
@@ -70,84 +76,6 @@
           <button onclick="avancarPergunta()" id="btn-avancar" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold transition ml-auto">
             Próxima <i class="fas fa-arrow-right ml-2"></i>
           </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção 2: Introdução -->
-    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
-      <h2 class="text-2xl font-bold mb-4 text-blue-400">O que é Cibersegurança?</h2>
-      <p class="mb-4">Você sabe o que é cibersegurança? Sabe quais são os ataques mais comuns entre os criminosos virtuais? Conhece as medidas de segurança usadas na prevenção de ameaças? Este guia completo aborda desde os princípios básicos até dicas avançadas de proteção.</p>
-      
-      <div class="grid md:grid-cols-2 gap-6 mt-6">
-        <div class="bg-gray-700 p-4 rounded-lg">
-          <h3 class="font-bold text-lg mb-2 text-green-400">Princípios Fundamentais</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Confidencialidade</li>
-            <li>Disponibilidade</li>
-            <li>Integridade</li>
-            <li>Autenticidade</li>
-          </ul>
-        </div>
-        <div class="bg-gray-700 p-4 rounded-lg">
-          <h3 class="font-bold text-lg mb-2 text-green-400">Ameaças Comuns</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Phishing</li>
-            <li>Malware</li>
-            <li>Ataques de força bruta</li>
-            <li>Engenharia social</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção 3: Princípios da Cibersegurança -->
-    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
-      <h2 class="text-2xl font-bold mb-4 text-blue-400">Princípios da Cibersegurança</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
-          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-lock mr-2"></i>Confidencialidade</h3>
-          <p>Garante que a informação esteja acessível apenas a pessoas autorizadas.</p>
-        </div>
-        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
-          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-server mr-2"></i>Disponibilidade</h3>
-          <p>Assegura que os dados estejam disponíveis quando necessário.</p>
-        </div>
-        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
-          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-shield-alt mr-2"></i>Integridade</h3>
-          <p>Garante que a informação não seja modificada ou destruída sem autorização.</p>
-        </div>
-        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
-          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-fingerprint mr-2"></i>Autenticidade</h3>
-          <p>Confirma a origem e autoria da informação.</p>
-        </div>
-        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
-          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-check-double mr-2"></i>Confiabilidade</h3>
-          <p>Assegura que sistemas funcionem como esperado, mesmo sob pressão.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção 4: Ameaças Cibernéticas -->
-    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
-      <h2 class="text-2xl font-bold mb-4 text-blue-400">Ameaças Cibernéticas Comuns</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <h3 class="font-bold text-lg mb-2"><i class="fas fa-bomb mr-2 text-red-400"></i>Técnicas de Ataque</h3>
-          <ul class="list-disc list-inside space-y-2">
-            <li><strong>Força bruta:</strong> tentativa e erro para descobrir senhas.</li>
-            <li><strong>Malware:</strong> programas maliciosos como vírus, spyware e trojans.</li>
-            <li><strong>Engenharia social:</strong> manipulação psicológica, como phishing.</li>
-            <li><strong>Escuta de tráfego:</strong> interceptação de dados em redes públicas.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold text-lg mb-2"><i class="fas fa-skull mr-2 text-red-400"></i>Outras Ameaças</h3>
-          <ul class="list-disc list-inside space-y-2">
-            <li><strong>Ataques DDoS:</strong> sobrecarga de servidores por múltiplas requisições.</li>
-            <li><strong>Varredura em redes:</strong> identificação de dispositivos e serviços vulneráveis.</li>
-            <li><strong>Desfiguração de página:</strong> alteração visual de sites por hackers.</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -254,22 +182,31 @@
 
    
     <!-- Seção 8: Referências -->
-    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
+     <section id="ref" class="text-center bg-gray-800 rounded-xl p-6 shadow-md">
       <h2 class="text-2xl font-bold mb-4 text-blue-400">Referências e Fontes</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <h3 class="font-bold text-lg mb-2"><i class="fas fa-book text-yellow-400 mr-2"></i>Livros</h3>
+      <div class="container-fonte">
+        <div class="fontes">
+          <h3 class="font-bold text-lg mb-2"><i class="fas fa-book text-yellow-400 mr-2"></i>Livros e artigos</h3>
           <ul class="list-disc list-inside space-y-1">
             <li><em>Segurança em informática e de informações</em> - Carlos A. A. Carudo e Flávio Deny Steffen</li>
             <li><em>Segurança e auditoria da tecnologia da informação</em> - Claudia Dias</li>
+            <li><a href="https://www.cert.br/docs/palestras/certbr-egi2014.pdf" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">CERT.br - Fundamentos de Segurança da Informação </a></li>
+            <li><a href="https://support.norton.com/sp/en/us/home/current/solutions/v105274822" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Norton – Dicas contra golpes online. </a></li>
+            <li><a href="https://safety.google/intl/pt-BR_br/stories/passwort/" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Google Safety Center – Por que a autenticação em dois fatores é essencial </a></li>
+            <li><a href="https://www.kaspersky.com.br/blog/unknown-apps-android/18082/" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Kaspersky Lab – Riscos de conceder acesso a apps desconhecidos</a></li>
+            <li><a href="https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Federal Trade Commission (FTC) – Como reconhecer e evitar fraudes </a></li>
+            <li><a href="https://bitwarden.com/blog/an-introductory-guide-on-how-to-use-bitwarden-password-manager/" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Bitwarden Blog - Por que usar um gerenciador de senhas </a></li>
+            <li><a href="https://www.lastpass.com/pt/features/password-generator/tips-for-creating-strong-passwords" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">LastPass Security - Como criar senhas fortes </a></li>
           </ul>
-        </div>
-        <div>
-          <h3 class="font-bold text-lg mb-2"><i class="fas fa-globe text-blue-400 mr-2"></i>Recursos Online</h3>
+
+          <div class="fontes">
+              <h3 class="font-bold text-lg mb-2"><i class="fas fa-globe text-blue-400 mr-2"></i>Vídeos:</h3>
           <ul class="list-disc list-inside space-y-1">
-            <li><a href="https://www.cert.br/docs/palestras/certbr-egi2014.pdf" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">CERT.br - Material de apoio</a></li>
-            <li><a href="https://youtu.be/Gfh2bxe3hGU" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Vídeo sobre princípios de segurança</a></li>
+            <li><a href="https://youtu.be/Gfh2bxe3hGU" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Vídeo aula sobre segurança da informação - Professora Nattane</a></li>
+            <li><a href="https://youtu.be/Tnp5c8VpOrI?si=aMk8sOrqahDL94FB" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Princípios da segurança da informação -Rico domingues concursos</a></li>
+            <li><a href="https://youtu.be/aIFsUBXe-mk?si=Cl045aFPYBL4lEMj" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Principais tipos de ataques cibernéticos</a></li>
           </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -283,7 +220,7 @@
 
   <footer class="bg-gray-800 text-center py-8 mt-12">
     <div class="max-w-6xl mx-auto px-6">
-      <p class="mb-2">&copy; 2025 Guia Completo de Cibersegurança. Todos os direitos reservados.</p>
+      <p class="mb-2">&copy; 2025 Guia Completo de Cibersegurança.</p>
       <p class="text-sm text-gray-400">Este conteúdo é apenas para fins educativos.</p>
     </div>
   </footer>
