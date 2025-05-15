@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberQuiz - Teste seu conhecimento em Cibersegurança</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .gradient-bg {
+      background: linear-gradient(90deg, #0f62fe, #6929c4);
+    }
+    .btn-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    #text-ancora{ 
+      padding-bottom: 17px;
+    }
+    #acesso{
+      margin: 17px;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-[Inter] min-h-screen">
+  <!-- Cabeçalho -->
+  <header class="gradient-bg p-6 text-center shadow-lg">
+    <h1 class="text-3xl md:text-4xl font-extrabold">CyberQuiz</h1>
+    <p class="mt-2 opacity-90">Domine os princípios da cibersegurança</p>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="max-w-3xl mx-auto p-6">
+    <section class="text-center mb-12 mt-8">
+      <h2 class="text-2xl font-bold text-blue-400 mb-4">O que é Cibersegurança?</h2>
+      <p class="text-lg leading-relaxed">
+      <span class="text-green-400">Você sabe o que é cibersegurança?
+       Sabe quais são os ataques mais comuns entre os criminosos virtuais? 
+      Conhece as medidas de segurança usadas na prevenção de ameaças?
+      </span> 
+      Leia o nosso artigo sobre fundamentos de cibersegurança para conhecer um pouco 
+      mais sobre esse assunto e depois responda o quiz que disponibilizamos para conferir seus conhecimentos. 
+
+      </p>
+    </section>
+    <div  class="text-center mb-11">
+        <button id="ancora" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg transition hidden">
+          <a href="Cybertech.html"> <p class="font-bold">Acessar Quiz</p></a>
+    </button>
+    </div>
+    <!-- Botão "Saiba Mais" -->
+    <div class="text-center mb-12">
+      <button 
+        onclick="mostrarTexto()" 
+        id="saiba-mais-btn"
+        class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-bold transition btn-hover"
+      >
+        <i class="fas fa-arrow-down mr-2"></i> Saiba Mais
+      </button>
+    </div>
+
+    <!-- Texto Oculto (será exibido ao clicar no botão) -->
+    <div id="texto-completo" class="hidden bg-gray-800 rounded-xl p-6 shadow-md">
+      <!-- Texto completo sobre Cibersegurança -->
+      <h2 class="text-2xl font-bold text-blue-400 mb-4">Cibersegurança e Privacidade de Dados: Um Guia Completo para Proteção Digital</h2>
+     
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">Introdução: O que é Cibersegurança?</h3>
+      <p class="mb-6">
+        A cibersegurança faz parte de uma segmentação específica dentro do campo da <span class="text-green-400">Segurança da Informação</span>, que  diz respeito à proteção de todos e quaisquer dados digitalizados, ou seja dados transmitidos por redes ou armazenados em nuvem.
+       <br> A cibersegurança se baseia em princípios que são fundamentais para o desenvolvimento de sistemas e procedimentos de segurança, são eles:
+      </p>
+      <h4 class=" font-bold text-lg mb-2">O princípio de confidencialidade </h4>
+      <P class="mb-6">
+        É o que  garante que a informação estará acessível apenas para pessoas autorizadas.<br> Ou seja, protege o sigilo das informações, a privacidade das informações.
+        A principal forma de mantê-la é por meio da autenticação, controlando e restringindo os acessos.
+      </P>
+      <h4 class="font-bold text-lg mb-2">Disponibilidade </h4>
+      <P class="mb-6">
+       Que garante o acesso e uso rápido e confiável da informação, de forma que os dados e sistemas estejam disponíveis para pessoas autorizadas no momento em que se tornar necessário.
+      </P>
+      <h4 class="font-bold text-lg mb-2"> Integridade </h4>
+      <P class="mb-6">
+      O princípio da integridade refere-se à manutenção das condições iniciais das informações, prevenindo contra a modificação ou destruição imprópria de informação. 
+      Isto significa que um item (informação e/ou sistema) não será modificado ou destruído sem autorização para isso.
+      </P>
+      <p class="mb-6">Estes são a base clássica dos princípios de segurança que você pode encontrar na maioria dos materiais introdutórios, porém em materiais mais detalhados  
+        você pode ouvir falar em outros princípios. Aqui iremos falar um pouco também de autenticidade e confiabilidade.
+      </p>
+      <h4 class="font-bold text-lg mb-2">Autenticidade </h4>
+      <P class="mb-6">
+     É o princípio que assegura que as informações são provenientes de fontes seguras, realizando a tarefa de identificar e registrar o usuário que está enviando ou modificando a informação, 
+     permitindo assim que o destinatário comprove a origem e a autoria de um documento. Ou seja, a autenticidade é quando um usuário vai manipular algum dado e ocorre uma documentação sobre essa ação.      
+     </P>
+     <h4 class="font-bold text-lg mb-2">Confiabilidade </h4>
+      <P class="mb-6">
+     A confiabilidade garante que a informação, os sistemas e os serviços, mesmo em condições adversas, funcionem 
+     conforme o esperado, transmitindo confiança ao usuário de que os dados estão corretos, seguros e disponíveis quando necessário.
+     </P>
+     <p class="mb-6">
+      É importante pontuar aqui a diferença entre <span class="text-green-400">confiabilidade</span> e <span class="text-green-400">confidencialidade</span>, apesar desses dois termos serem muito parecidos eles possuem significados diferentes. 
+      <br>A confidencialidade envolve a obrigação de proteger o direito à privacidade, mantendo em sigilo os segredos de outras pessoas ou organizações, se você souber deles. 
+      <br>Já a confiabilidade está ligada à confiança na expectativa, e na  previsibilidade de um sistema. <br>
+     <br> Os princípios de cibersegurança são mutuamente complementares, isto é, estão relacionados uns aos outros, pois é necessário que eles atuem juntos para que um sistema seja 
+      considerado seguro, porque nenhum princípio isoladamente, é suficiente para garantir a segurança de forma robusta.  
+     </p>
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">Quais são as ameaças cibernéticas mais comuns?</h3>
+        <p class="mb-6">Entre as ameaças mais comuns temos:</p>
+        <h4 class="font-bold text-lg mb-2 ">1. Força bruta </h4>
+        <P class="mb-6">
+          Esse tipo de ataque basicamente consiste em adivinhar, por tentativa e erro, um nome de usuário e senha de um serviço ou sistema.
+        </P>
+        <h4 class=" font-bold text-lg mb-2">2. Código Malicioso (Malware) </h4>
+        <P class="mb-6">
+         Termo genérico usado para se referir a programas desenvolvidos para executar ações danosas e atividades maliciosas em um computador ou dispositivo móvel.
+        <br> Existem vários tipos de malware, o mais conhecido entre eles é o <span class="text-green-400">vírus</span> que assim como nas pessoas, ele precisa de um hospedeiro para infectar. 
+         O vírus é utilizado para roubar informações e danificar o sistema, ele se aloja em programas ou arquivos e vai se replicando por mais e mais programas. O vírus é pego quando o usuário abre um programa, arquivo ou link contaminado. 
+        </P>
+         <h4 class="font-bold text-lg mb-2">3. Engenharia social </h4>
+        <P class="mb-6">
+         É uma técnica por meio da qual uma pessoa procura persuadir outra a executar determinadas ações.  
+         Um exemplo dessa prática é por meio do <span class="text-green-400">phishing</span>  esse ataque acontece de uma forma disfarçada, se passando por alguém ou alguma empresa conhecida
+         e é enviado geralmente por email ou mensagem. Essa mensagem quase sempre contém um link que se passa por algum site legítimo. 
+         A vítima acaba inserindo seus dados e tento os mesmos roubados.
+        </P>
+        <h4 class="font-bold text-lg mb-2 ">4. Escuta de tráfego (Traffic Sniffing ou Eavesdropping) </h4>
+        <P class="mb-6">
+         Consiste em interceptar ou seja violar a privacidade dos dados trafegados em redes de computadores, por meio do uso de programas específicos, 
+         <span class="text-green-400">atuando como um "espião", observando silenciosamente o tráfego da rede.</span> Isso acontece especialmente em redes não criptografadas como  redes de wifi públicas.
+        </P>
+         <h4 class="font-bold text-lg mb-2">5. Negação de serviço distribuída (DDoS) </h4>
+        <P class="mb-6">
+         Atividade maliciosa, coordenada e distribuída, pela qual um conjunto de computadores e/ou dispositivos móveis é utilizado para tirar de operação um serviço, 
+         um computador ou uma rede conectada à Internet, geralmente  devido a ataques de inundação, (ataques contínuos). Os invasores sobrecarregam o servidor/rede tornando inacessível para os usuários.
+        </P>
+         <h4 class="font-bold text-lg mb-2">6. Varredura em redes (Network Scanning) </h4>
+        <P class="mb-6">
+         Consiste em efetuar buscas minuciosas em redes, com o objetivo de identificar computadores ativos e coletar informações sobre eles, como, por exemplo, serviços disponibilizados.  
+         Em outras palavras, é uma <span class="text-green-400">técnica para mapear uma rede, </span> utilizada para reconhecimento de alvos, vulnerabilidades e oportunidades de invasão.
+        </P>
+         <h4 class="font-bold text-lg mb-2">7. Desfiguração de página (Defacement) </h4>
+        <P class="mb-6">
+         É um tipo de ataque utilizado para alterar o conteúdo de páginas Web de um determinado site normalmente substituindo a página principal ou 
+         outras páginas por mensagens, imagens ou vídeos. O atacante que desfigura uma página Web é conhecido como Defacer.  
+        </P>
+        
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">Quais são as medidas de segurança existentes diante dessas ameaças?</h3>
+      <div class="mb-6">
+        <p class="mb-6"">
+        Ameaças cibernéticas estão constantemente surgindo, se desenvolvendo e sendo aprimoradas, 
+        por isso é importante o conhecimento de medidas de segurança para a proteção e prevenção de ameaças.
+        </p>
+
+        <h4 class="font-bold text-lg mb-2">Criptografia</h4>
+        <p class="mb-6">
+          A criptografia é um conjunto de métodos e técnicas para cifrar informações legíveis (texto claro) por meio de um algoritmo e uma chave, convertendo a mensagem para texto cifrado (ilegível).
+          A cifragem dos dados é usada dentre outras finalidades, para:
+        </p>
+        <ul class="list-disc pl-6 mb-4">
+          <li class="mb-2">O armazenamento de dados; </li>
+          <li class="mb-2">Autenticar a identidade de usuários;</li>
+          <li class="mb-2">Autenticar transações bancárias;</li>
+          
+        </ul>
+        <p class="mb-6"> Existem várias técnicas de criptografia mas as principais são:</p>
+         <h4 class=" text-lg mb-2 ">Criptografia simétrica</h4>
+        <P class="mb-6">
+         Usa uma única chave para criptografar e descriptografar a informação, tanto para quem envia quanto para quem recebe a mensagem. A chave na criptografia é 
+         similar a uma senha, que é utilizada como elemento secreto pelos métodos criptográficos. 
+        </P>
+         <h4 class=" text-lg mb-2 ">Criptografia assimétrica</h4>
+        <P class="mb-6">
+        Já a criptografia assimétrica utiliza duas chaves, uma para criptografar chamada de chave pública e outra para descriptografar chamada de chave privada.
+        </P>
+
+        <h4 class="font-bold text-lg mb-2">Certificado digital</h4>
+        <p class="mb-6">
+          É um registro eletrônico composto por um conjunto de dados que distingue uma entidade e associa a ela uma chave pública. 
+          É emitido por uma autoridade certificadora, e a chave pública é utilizada por terceiros para verificar a autenticidade do certificado. 
+          Além disso, por obrigatoriedade todo certificado digital possui prazo de validade. 
+        </p>
+
+        <h4 class="font-bold text-lg mb-2">Assinatura digital</h4>
+        <p class="mb-6">
+          código usado para comprovar a autenticidade e a integridade de uma informação, ou seja, que ela foi realmente gerada por quem diz 
+          ter feito isso e que ela não foi alterada. Funciona como uma assinatura manuscrita, mas com muito mais segurança, pois utiliza criptografia.
+        </p>
+        <p class="mb-6">Importante explicar que a assinatura digital e certificado digital, apesar de estarem relacionados têm funções distintas, 
+          o certificado digital permite a criação de assinaturas digitais.<span class="text-green-400"> Sem um certificado digital válido, não é possível gerar uma assinatura digital segura.</span> 
+          A assinatura digital, por sua vez, garante a autenticidade de documentos, assegurando que foram assinados por alguém com um certificado válido.
+        </p>
+         <h4 class="font-bold text-lg mb-2 ">Antimalware</h4>
+        <P class="mb-6">
+          Procura detectar e, então, anular ou remover os códigos maliciosos de um computador. 
+          Os programas antivírus, antispyware, antirootkit e antitrojan são exemplos de ferramentas antimalware. 
+        </P>
+         <h4 class="font-bold text-lg mb-2 ">Filtro antispam</h4>
+        <P class="mb-6">
+         Permite separar os e-mails conforme regras pré-definidas. ­Pode ser implementado com base em análise de conteúdo ou de origem das mensagens.
+        </P>
+         <h4 class="font-bold text-lg mb-2 ">Firewall</h4>
+        <P class="mb-6">
+        Usado para dividir e controlar o acesso entre redes de computadores, bloqueando tráfegos específicos de acordo com o conjunto predefinido de regras, 
+        atuando basicamente como um filtro de pacotes listando origens e destinos aceitáveis e  origens e destinos indesejados. Um firewall pode ser um dispositivo de hardware, software ou ambos.
+        </P>
+         <h4 class="font-bold text-lg mb-2 ">VPN (Rede Privada Virtual)</h4>
+        <P class="mb-6">
+        Termo usado para se referir à construção de uma rede privada utilizando redes públicas (por exemplo, a Internet) como infraestrutura. 
+        Em geral utilizam criptografia e outros mecanismos de segurança para proteger os dados em trânsito. Existem serviços na Internet que dizem fornecer uma VPN, mas que apenas fornecem serviços de 
+        proxy que “ocultam” o IP de origem – a maior parte destes serviços não cifra o conteúdo em trânsito. 
+        </P>
+      </div>
+
+      <!-- Segundo texto sobre Proteção de Redes Sociais -->
+      <h2 class="text-2xl font-bold text-blue-400 mb-4 mt-12">Guia Completo: Como Proteger Suas Redes Sociais e Dados Online</h2>
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">Introdução: A Importância da Segurança Digital</h3>
+      <p class="mb-6">Em um mundo onde 4,9 bilhões de pessoas usam redes sociais (DataReportal, 2024) e 60% dos usuários já sofreram tentativas de golpe online (Relatório Norton Cyber Safety), proteger suas contas e dados deixou de ser opcional. Este guia detalhado vai desde configurações básicas de segurança até técnicas avançadas para evitar invasões, vazamentos e fraudes.</p>
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">1. Proteção Avançada para Redes Sociais</h3>
+      <h4 class="font-bold text-lg mb-2">Senhas Fortes e Únicas: A Primeira Linha de Defesa</h4>
+      <p class="mb-2">Por que importa? 81% das invasões ocorrem por senhas fracas ou vazadas (Relatório Verizon 2023).</p>
+      <p class="mb-2">Como criar senhas seguras:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li class="mb-2">Use frases complexas (ex: "Café@ManhãComPão#2024!" em vez de "senha123").</li>
+        <li class="mb-2">Evite:
+          <ul class="list-disc pl-6">
+            <li class="mb-1">Sequências óbvias ("123456", "qwerty").</li>
+            <li>Substituições previsíveis ("S3nh@F0rt3" é fácil de quebrar com ataques de dicionário).</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="mb-4">Ferramentas úteis: Geradores de senhas como Bitwarden ou KeePass.</p>
+
+      <h4 class="font-bold text-lg mb-2">Autenticação de Dois Fatores (2FA): O Que Usar?</h4>
+      <div class="overflow-x-auto mb-4">
+        <table class="min-w-full bg-gray-700 rounded-lg overflow-hidden">
+          <thead class="bg-gray-600">
+            <tr>
+              <th class="px-4 py-2 text-left">Método</th>
+              <th class="px-4 py-2 text-left">Segurança</th>
+              <th class="px-4 py-2 text-left">Praticidade</th>
+              <th class="px-4 py-2 text-left">Melhor Uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-600">
+              <td class="px-4 py-2">App (Google Authenticator)</td>
+              <td class="px-4 py-2">⭐⭐⭐⭐⭐</td>
+              <td class="px-4 py-2">⭐⭐⭐⭐</td>
+              <td class="px-4 py-2">Contas críticas (e-mail, banco)</td>
+            </tr>
+            <tr class="border-b border-gray-600">
+              <td class="px-4 py-2">Chave Física (YubiKey)</td>
+              <td class="px-4 py-2">⭐⭐⭐⭐⭐</td>
+              <td class="px-4 py-2">⭐⭐</td>
+              <td class="px-4 py-2">Quem precisa de máxima segurança</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">SMS</td>
+              <td class="px-4 py-2">⭐⭐</td>
+              <td class="px-4 py-2">⭐⭐⭐⭐⭐</td>
+              <td class="px-4 py-2">Emergências (mas evite para bancos)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mb-6">Cuidado: Golpes de SIM swapping (clonagem de chip) podem burlar 2FA por SMS.</p>
+
+      <!-- Restante do conteúdo sobre proteção de redes sociais -->
+      <h4 class="font-bold text-lg mb-2">Aplicativos de Terceiros: O Perigo Escondido</h4>
+      <p class="mb-2">Risco: Apps como "quizzes" ou "filtros de foto" podem:</p>
+      <ul class="list-disc pl-6 mb-4">
+        <li class="mb-2">Acessar sua lista de contatos.</li>
+        <li>Postar em seu nome (caso do escândalo Cambridge Analytica).</li>
+      </ul>
+      <p class="mb-2">Como auditar:</p>
+      <ul class="list-disc pl-6 mb-6">
+        <li class="mb-2"><strong>Facebook:</strong> Configurações > Apps e Sites > Remova os não usados.</li>
+        <li><strong>Google:</strong> security.google.com > Aplicativos de terceiros.</li>
+      </ul>
+
+      <h4 class="font-bold text-lg mb-2">Mensagens e Links Suspeitos</h4>
+      <p class="mb-2">Golpe comum: "Oi, sou [amigo], perdi meu celular. Me envia o código que recebi?" (ataque a contas com 2FA).</p>
+      <p class="mb-6">Solução: Sempre confirme por outro canal (ligaçãovoz, WhatsApp criptografado).</p>
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">2. Como Verificar Links Suspeitos e Evitar Golpes</h3>
+      <h4 class="font-bold text-lg mb-2">Anatomia de um URL Malicioso</h4>
+      <p class="mb-2">Domínios falsos:</p>
+      <ul class="list-disc pl-6 mb-2">
+        <li class="mb-2"><strong>facebook.com</strong> (legítimo) vs. <strong>faceb00k-login.com</strong> (falso).</li>
+        <li>Subdomínios enganosos: "google.com.security-alert.xyz" não é do Google.</li>
+      </ul>
+      <p class="mb-4">Encurtadores perigosos: bit.ly/3xY7zPq pode levar a um site de phishing.</p>
+
+      <h4 class="font-bold text-lg mb-2">Ferramentas Grátis para Checar Links</h4>
+      <ol class="list-decimal pl-6 mb-4">
+        <li class="mb-2"><strong>VirusTotal</strong> (virustotal.com): Escaneia URLs com 70+ antivírus.</li>
+        <li class="mb-2"><strong>URLVoid</strong> (urlvoid.com): Verifica reputação do domínio.</li>
+        <li class="mb-4"><strong>Google Transparency Report</strong> (transparencyreport.google.com): Mostra se o site é marcado como malicioso.</li>
+      </ol>
+
+      <h4 class="font-bold text-lg mb-2">Golpes por Link Mais Comuns</h4>
+      <div class="overflow-x-auto mb-6">
+        <table class="min-w-full bg-gray-700 rounded-lg overflow-hidden">
+          <thead class="bg-gray-600">
+            <tr>
+              <th class="px-4 py-2 text-left">Tipo</th>
+              <th class="px-4 py-2 text-left">Exemplo</th>
+              <th class="px-4 py-2 text-left">Como Identificar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-600">
+              <td class="px-4 py-2">Phishing</td>
+              <td class="px-4 py-2">"Sua conta Netflix será bloqueada! Clique aqui."</td>
+              <td class="px-4 py-2">Erros de português, remetente estranho (ex: suporte@netflx-support.com)</td>
+            </tr>
+            <tr class="border-b border-gray-600">
+              <td class="px-4 py-2">Malware</td>
+              <td class="px-4 py-2">"Você ganhou um vale-compras! Baixe o cupom.exe."</td>
+              <td class="px-4 py-2">Extensões suspeitas (.exe, .bat, .scr)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Fake News</td>
+              <td class="px-4 py-2">"Clique para ver o vídeo exclusivo da celebridade X."</td>
+              <td class="px-4 py-2">URLs com caracteres aleatórios (ex: youtube.com.watch?v=scam123)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">3. Como Identificar e Evitar Golpes Online</h3>
+      <h4 class="font-bold text-lg mb-2">Golpes Modernos (e Como Cair Menos)</h4>
+      <div class="overflow-x-auto mb-4">
+        <table class="min-w-full bg-gray-700 rounded-lg overflow-hidden">
+          <thead class="bg-gray-600">
+            <tr>
+              <th class="px-4 py-2 text-left">Golpe</th>
+              <th class="px-4 py-2 text-left">Tática</th>
+              <th class="px-4 py-2 text-left">Defesa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-600">
+              <td class="px-4 py-2">Falso Suporte Técnico</td>
+              <td class="px-4 py-2">Ligam dizendo "seu PC está infectado"</td>
+              <td class="px-4 py-2">Microsoft/Apple NUNCA ligam sem solicitação. Desligue e contate o suporte oficial</td>
+            </tr>
+            <tr class="border-b border-gray-600">
+              <td class="px-4 py-2">Romance Scam</td>
+              <td class="px-4 py-2">Perfis falsos no Tinder/Instagram pedindo dinheiro para "emergências"</td>
+              <td class="px-4 py-2">Pesquise a foto no Google Images (muitos são de catálogos de stock)</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Falsos Sorteios</td>
+              <td class="px-4 py-2">"Você ganhou um iPhone! Pague a taxa de envio."</td>
+              <td class="px-4 py-2">Empresas sérias não cobram para entregar prêmios</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="font-bold text-lg mb-2">Dicas Ouro Contra Golpes</h4>
+      <ul class="list-disc pl-6 mb-6">
+        <li class="mb-2">Nunca compartilhe: Códigos 2FA, senhas ou dados bancários por mensagem.</li>
+        <li class="mb-2">Verifique ofertas: Pesquise no Reclame Aqui ou no Google "[empresa] + golpe".</li>
+        <li>Use e-mails descartáveis (ex: Temp-Mail) para cadastros em sites duvidosos.</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">4. Proteção de Dados na Nuvem: Além da Senha</h3>
+      <h4 class="font-bold text-lg mb-2">Criptografia Avançada</h4>
+      <ul class="list-disc pl-6 mb-4">
+        <li class="mb-2"><strong>Cryptomator</strong> (gratuito): Criptografa arquivos antes de subir para Google Drive/Dropbox.</li>
+        <li><strong>Veracrypt</strong> (avançado): Cria "cofres" criptografados em HDs externos.</li>
+      </ul>
+
+      <h4 class="font-bold text-lg mb-2">Configurações de Privacidade</h4>
+      <ul class="list-disc pl-6 mb-4">
+        <li class="mb-2"><strong>Google Drive:</strong> Limite compartilhamentos a "Pessoas específicas" (não use "Qualquer pessoa com o link").</li>
+        <li><strong>iCloud:</strong> Ative Advanced Data Protection (criptografia de ponta a ponta para backups).</li>
+      </ul>
+
+      <h4 class="font-bold text-lg mb-2">Backup 3-2-1 (Regra de Ouro)</h4>
+      <ul class="list-disc pl-6 mb-6">
+        <li class="mb-2"><strong>3 cópias</strong> dos dados (ex: nuvem + HD externo + pendrive).</li>
+        <li class="mb-2"><strong>2 mídias diferentes</strong> (não dependa só da nuvem).</li>
+        <li><strong>1 cópia offline</strong> (proteção contra ransomware).</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">5. 6 Dicas Práticas para Usuários Comuns</h3>
+      <ol class="list-decimal pl-6 mb-6">
+        <li class="mb-2"><strong>Atualize TUDO:</strong> 60% das brechas exploradas em 2023 tinham patches disponíveis (CISA).</li>
+        <li class="mb-2"><strong>Gerenciador de Senhas:</strong> Bitwarden (gratuito) ou 1Password (pago).</li>
+        <li class="mb-2"><strong>VPN em Wi-Fi público:</strong> Evita sniffing em aeroportos/hotéis (use ProtonVPN ou Windscribe).</li>
+        <li class="mb-2"><strong>Monitoramento de vazamentos:</strong> Cadastre e-mails no Have I Been Pwned.</li>
+        <li class="mb-2"><strong>Eduque sua família:</strong> Golpes como "clonagem de WhatsApp" afetam idosos.</li>
+        <li><strong>Desconfie de "ofertas":</strong> Se um iPhone 15 custa R$ 500, é golpe.</li>
+      </ol>
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">Fontes Confiáveis e Ferramentas</h3>
+      <div class="overflow-x-auto mb-6">
+        <table class="min-w-full bg-gray-700 rounded-lg overflow-hidden">
+          <thead class="bg-gray-600">
+            <tr>
+              <th class="px-4 py-2 text-left">Categoria</th>
+              <th class="px-4 py-2 text-left">Recomendação</th>
+              <th class="px-4 py-2 text-left">Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-600">
+              <td class="px-4 py-2">Antivírus</td>
+              <td class="px-4 py-2">Kaspersky Free</td>
+              <td class="px-4 py-2">kaspersky.com.br</td>
+            </tr>
+            <tr class="border-b border-gray-600">
+              <td class="px-4 py-2">VPN</td>
+              <td class="px-4 py-2">ProtonVPN</td>
+              <td class="px-4 py-2">protonvpn.com</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2">Senhas</td>
+              <td class="px-4 py-2">Bitwarden</td>
+              <td class="px-4 py-2">bitwarden.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-xl font-semibold text-green-400 mt-6 mb-3">Conclusão: Segurança é um Hábito</h3>
+      <p class="mb-4">A cada 39 segundos, um ataque cibernético ocorre no mundo (Universidade de Maryland). Comece hoje:</p>
+      <ul class="list-disc pl-6 mb-6">
+        <li class="mb-2">Ative 2FA nas redes sociais.</li>
+        <li class="mb-2">Baixe um gerenciador de senhas.</li>
+        <li>Compartilhe este guia com quem você ama.</li>
+      </ul>
+      
+    </div>
+    <div id="acesso" class="text-center mb-12 hidden bg-gray-800 rounded-xl p-6 shadow-md">
+        <p id="text-ancora">Diante desse panorama geral  que apresentamos sobre a cibersegurança, se sente preparado(a) para responder o quiz? Acha que consegue acertar todas as perguntas? Faça o teste e comprove seus conhecimentos. </p>
+        <button class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-bold transition btn-hover ">
+          <a href="Cybertech.html">Acessar Quiz</a>
+        </button>     
+      </div>
+  </main>
+
+  <footer class="bg-gray-800 text-center py-6 mt-8">
+    <p class="text-sm text-gray-400">&copy; 2025 CyberQuiz</p>
+  </footer>
+
+  <script>
+    function mostrarTexto() {
+      const texto = document.getElementById("texto-completo");
+      const btn = document.getElementById("saiba-mais-btn");
+      document.getElementById("acesso").classList.remove("hidden")
+      document.getElementById("ancora").classList.remove("hidden");
+      
+      texto.classList.toggle("hidden");
+      btn.innerHTML = texto.classList.contains("hidden") 
+        ? '<i class="fas fa-arrow-down mr-2"></i> Saiba Mais' 
+        : '<i class="fas fa-arrow-up mr-2"></i> Mostrar Menos';
+      
+      // Rolagem suave até o texto
+      if (!texto.classList.contains("hidden")) {
+        texto.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>

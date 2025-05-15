@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Completo de Cibersegurança + Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="script.js" type="module" ></script> <!--minhas alteraçoes-->
+  
+  <style>
+    .cabeçalho {
+      background: linear-gradient(90deg, #0f62fe, #6929c4);
+    
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 640px) {
+      .card-hover:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-[Inter]">
+  <!-- Cabeçalho Unificado -->
+  <header class="cabeçalho p-8 text-center shadow-xl">
+    <h1 class="text-4xl font-extrabold mb-2">Guia Completo de Cibersegurança e Privacidade Digital</h1>
+    <p class="text-xl opacity-90">Proteja seus dados e redes sociais com as melhores práticas</p>
+  </header>
+
+  <main class="p-6 max-w-6xl mx-auto space-y-12">
+
+ <!-- Seção 1: Quiz Interativo -->
+    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
+      <div class="text-center"> <!--div para iniciar o quiz-->
+        <h2 class="text-2xl font-bold mb-4 text-blue-400">Quiz de Cibersegurança</h2>
+        <p class="mb-6">Teste seu conhecimento com 50 perguntas sobre proteção digital:</p>
+
+        <!--butão para iniciar o quiz-->
+        <button onclick="iniciarQuiz()" id="btn-começar" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-bold transition flex items-center justify-center gap-2 mx-auto">
+          <i class="fas fa-play"></i> Começar Quiz
+        </button> 
+      </div>
+
+      <div id="quiz-container" class="mt-8 hidden">
+        <button onclick="continuarQuiz()" id="btn-continuar" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold transition ml-auto" style="display: none;">
+         Continuar Quiz
+        </button> <!--div container para as perguntas-->
+        <div class="mb-6 bg-gray-700 rounded-full h-3">
+          
+          <div id="progress-bar" class="bg-blue-500 h-3 rounded-full" style="width: 0%"></div> 
+        </div>
+        <p id="contador" class="text-sm text-gray-300 mb-4">Pergunta 1 de 50</p> <!--contador de perguntas-->
+        
+        <!--div filho de "quiz-container" para as perguntas-->
+        <div id="quiz" class="space-y-6"></div> 
+
+        <!--div para indicar respostas corretas e incorretas-->
+        <div id="feedback" class="hidden mt-4 p-4 rounded-lg"></div> 
+        
+        <div class="flex justify-between mt-6"> <!--div para butao -->
+          <button onclick="voltarPergunta()" id="btn-voltar" class="bg-gray-600 hover:bg-gray-500 px-4 py-2 rounded-lg transition hidden">
+            <i class="fas fa-arrow-left mr-2"></i>Voltar
+          </button>
+          <button onclick="avancarPergunta()" id="btn-avancar" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold transition ml-auto">
+            Próxima <i class="fas fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 2: Introdução -->
+    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
+      <h2 class="text-2xl font-bold mb-4 text-blue-400">O que é Cibersegurança?</h2>
+      <p class="mb-4">Você sabe o que é cibersegurança? Sabe quais são os ataques mais comuns entre os criminosos virtuais? Conhece as medidas de segurança usadas na prevenção de ameaças? Este guia completo aborda desde os princípios básicos até dicas avançadas de proteção.</p>
+      
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-gray-700 p-4 rounded-lg">
+          <h3 class="font-bold text-lg mb-2 text-green-400">Princípios Fundamentais</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Confidencialidade</li>
+            <li>Disponibilidade</li>
+            <li>Integridade</li>
+            <li>Autenticidade</li>
+          </ul>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg">
+          <h3 class="font-bold text-lg mb-2 text-green-400">Ameaças Comuns</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Phishing</li>
+            <li>Malware</li>
+            <li>Ataques de força bruta</li>
+            <li>Engenharia social</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 3: Princípios da Cibersegurança -->
+    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
+      <h2 class="text-2xl font-bold mb-4 text-blue-400">Princípios da Cibersegurança</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-lock mr-2"></i>Confidencialidade</h3>
+          <p>Garante que a informação esteja acessível apenas a pessoas autorizadas.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-server mr-2"></i>Disponibilidade</h3>
+          <p>Assegura que os dados estejam disponíveis quando necessário.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-shield-alt mr-2"></i>Integridade</h3>
+          <p>Garante que a informação não seja modificada ou destruída sem autorização.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-fingerprint mr-2"></i>Autenticidade</h3>
+          <p>Confirma a origem e autoria da informação.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-check-double mr-2"></i>Confiabilidade</h3>
+          <p>Assegura que sistemas funcionem como esperado, mesmo sob pressão.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 4: Ameaças Cibernéticas -->
+    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
+      <h2 class="text-2xl font-bold mb-4 text-blue-400">Ameaças Cibernéticas Comuns</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-bold text-lg mb-2"><i class="fas fa-bomb mr-2 text-red-400"></i>Técnicas de Ataque</h3>
+          <ul class="list-disc list-inside space-y-2">
+            <li><strong>Força bruta:</strong> tentativa e erro para descobrir senhas.</li>
+            <li><strong>Malware:</strong> programas maliciosos como vírus, spyware e trojans.</li>
+            <li><strong>Engenharia social:</strong> manipulação psicológica, como phishing.</li>
+            <li><strong>Escuta de tráfego:</strong> interceptação de dados em redes públicas.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-2"><i class="fas fa-skull mr-2 text-red-400"></i>Outras Ameaças</h3>
+          <ul class="list-disc list-inside space-y-2">
+            <li><strong>Ataques DDoS:</strong> sobrecarga de servidores por múltiplas requisições.</li>
+            <li><strong>Varredura em redes:</strong> identificação de dispositivos e serviços vulneráveis.</li>
+            <li><strong>Desfiguração de página:</strong> alteração visual de sites por hackers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 5: Proteção para Redes Sociais -->
+    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
+      <h2 class="text-2xl font-bold mb-4 text-blue-400">Proteção Avançada para Redes Sociais</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <ul class="list-disc list-inside space-y-2">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-key text-purple-400 mt-1"></i>
+              <div><strong>Senhas Fortes e Únicas:</strong> Use senhas complexas com letras, números e símbolos. Não repita senhas.</div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-mobile-alt text-blue-400 mt-1"></i>
+              <div><strong>Autenticação de Dois Fatores (2FA):</strong> Prefira apps autenticadores e chaves de segurança. SMS é menos seguro.</div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="list-disc list-inside space-y-2">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-plug text-red-400 mt-1"></i>
+              <div><strong>Cuidado com Aplicativos de Terceiros:</strong> Remova acessos desnecessários nas redes.</div>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-link text-yellow-400 mt-1"></i>
+              <div><strong>Mensagens e Links Suspeitos:</strong> Desconfie até de amigos. Verifique antes de clicar.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 6: Medidas de Segurança -->
+    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
+      <h2 class="text-2xl font-bold mb-4 text-blue-400">Medidas de Segurança Essenciais</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-lock mr-2"></i>Criptografia</h3>
+          <p>Protege dados usando técnicas simétricas ou assimétricas.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-shield-alt mr-2"></i>Firewall</h3>
+          <p>Controla acessos entre redes.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-user-secret mr-2"></i>VPN</h3>
+          <p>Cria conexões seguras em redes públicas.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-bug mr-2"></i>Antimalware</h3>
+          <p>Detecta e elimina códigos maliciosos.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-certificate mr-2"></i>Certificado Digital</h3>
+          <p>Identifica entidades com segurança por meio de chaves públicas.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg card-hover transition">
+          <h3 class="font-bold text-lg mb-2 text-green-400"><i class="fas fa-signature mr-2"></i>Assinatura Digital</h3>
+          <p>Garante autenticidade e integridade da informação.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 7: Ferramentas Recomendadas -->
+    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
+      <h2 class="text-2xl font-bold mb-4 text-blue-400">Ferramentas Recomendadas</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead class="bg-gray-700">
+            <tr>
+              <th class="p-3 border border-gray-600">Categoria</th>
+              <th class="p-3 border border-gray-600">Ferramenta</th>
+              <th class="p-3 border border-gray-600">Site Oficial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-gray-750 hover:bg-gray-700">
+              <td class="p-3 border border-gray-600 flex items-center gap-2"><i class="fas fa-shield-alt w-5"></i> Antivírus</td>
+              <td class="p-3 border border-gray-600">Kaspersky Free</td>
+              <td class="p-3 border border-gray-600"><a href="https://www.kaspersky.com.br" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">kaspersky.com.br</a></td>
+            </tr>
+            <tr class="bg-gray-750 hover:bg-gray-700">
+              <td class="p-3 border border-gray-600 flex items-center gap-2"><i class="fas fa-user-secret w-5"></i> VPN</td>
+              <td class="p-3 border border-gray-600">ProtonVPN</td>
+              <td class="p-3 border border-gray-600"><a href="https://protonvpn.com" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">protonvpn.com</a></td>
+            </tr>
+            <tr class="bg-gray-750 hover:bg-gray-700">
+              <td class="p-3 border border-gray-600 flex items-center gap-2"><i class="fas fa-lock w-5"></i> Criptografia</td>
+              <td class="p-3 border border-gray-600">Veracrypt</td>
+              <td class="p-3 border border-gray-600"><a href="https://veracrypt.fr" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">veracrypt.fr</a></td>
+            </tr>
+            <tr class="bg-gray-750 hover:bg-gray-700">
+              <td class="p-3 border border-gray-600 flex items-center gap-2"><i class="fas fa-key w-5"></i> Senhas</td>
+              <td class="p-3 border border-gray-600">Bitwarden</td>
+              <td class="p-3 border border-gray-600"><a href="https://bitwarden.com" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">bitwarden.com</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+   
+    <!-- Seção 8: Referências -->
+    <section class="bg-gray-800 rounded-xl p-6 shadow-md">
+      <h2 class="text-2xl font-bold mb-4 text-blue-400">Referências e Fontes</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-bold text-lg mb-2"><i class="fas fa-book text-yellow-400 mr-2"></i>Livros</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li><em>Segurança em informática e de informações</em> - Carlos A. A. Carudo e Flávio Deny Steffen</li>
+            <li><em>Segurança e auditoria da tecnologia da informação</em> - Claudia Dias</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-2"><i class="fas fa-globe text-blue-400 mr-2"></i>Recursos Online</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li><a href="https://www.cert.br/docs/palestras/certbr-egi2014.pdf" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">CERT.br - Material de apoio</a></li>
+            <li><a href="https://youtu.be/Gfh2bxe3hGU" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">Vídeo sobre princípios de segurança</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="text-center mb-10 ">
+        <button class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-bold transition btn-hover "> 
+           <a href="home.html" >Voltar para o artigo</a>
+        </button>
+          
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-center py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="mb-2">&copy; 2025 Guia Completo de Cibersegurança. Todos os direitos reservados.</p>
+      <p class="text-sm text-gray-400">Este conteúdo é apenas para fins educativos.</p>
+    </div>
+  </footer>
+
+  <!--começo de java script-->
+  </body>
+</html>
